@@ -3,20 +3,24 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import com.example.myapplication.ui.theme.MyApplicationTheme
+import androidx.activity.viewModels
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import com.example.myapplication.navigation.AppRouting
+import com.example.myapplication.ui.theme.SaveItDarkColorScheme
+import com.example.myapplication.ui.theme.SaveItLightColorScheme
 
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: UserViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-
-        val database = AppDatabase.getDatabase(applicationContext)
-        val repository = EmployeeRepository(database.employeeDao())
 
         setContent {
-            MyApplicationTheme {
-                AppNavigation(repository = repository)
+            val colors = if (isSystemInDarkTheme()) SaveItDarkColorScheme else SaveItLightColorScheme
+            MaterialTheme(colorScheme = colors) {
+                AppRouting(viewModel = viewModel)
             }
         }
     }

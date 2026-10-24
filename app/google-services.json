@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "377718656520",
+    "project_id": "saveit-bank-b5a45",
+    "storage_bucket": "saveit-bank-b5a45.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377718656520:android:0f223a7ce2a4a73325cbbd",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwlJ8xuMGxPohpCqeI-MlS0oK8enNFicE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
